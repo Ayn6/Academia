@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db96e64b3f4c3d544901f7b5bffa64e6, type: 3}
+  m_Name: Face 2
+  m_EditorClassIdentifier: 
+  faceReady: {fileID: 21300000, guid: bc0e6cef8f219c74bb79b14e9a271e7b, type: 3}
+  face: {fileID: 21300000, guid: e6099dd16bee28743bb772be1dfef3b9, type: 3}
+  hair: {fileID: 21300000, guid: db808b0ec97057e4e8f1058c4c4d1774, type: 3}
+  eye: {fileID: 21300000, guid: 4814fc1082931ed44be5d9da75062ba2, type: 3}
+  nose: {fileID: 21300000, guid: aceafb23b927594489c4a9b90b54f4ef, type: 3}
+  lips: {fileID: 21300000, guid: 07702e30f4a290f4db5c6d1368fcf950, type: 3}
+  glassec: {fileID: 0}
+  bread: {fileID: 21300000, guid: 191c82e8a860bfe4daaad7ca42141a46, type: 3}
