@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b82e7f331205bbf45a27072775f2f099, type: 3}
+  m_Name: Man 2
+  m_EditorClassIdentifier: 
+  man: {fileID: 21300000, guid: 3c0c57af52e7bcf4cb0c7e19b8020c87, type: 3}
+  face: {fileID: 21300000, guid: c650a4ca9d914d448a4f1a1d21f6dad4, type: 3}
+  hair: {fileID: 21300000, guid: 30149f76d8e962341870baf9956760d6, type: 3}
+  nose: {fileID: 21300000, guid: 8ffc2bff439048348a9aa3b7582b0cad, type: 3}
+  beard: {fileID: 21300000, guid: 2f84ff0eb8fb42b489398ea30c4f931e, type: 3}
+  eye: {fileID: 21300000, guid: 646f2588a04408046b23070c96531cd4, type: 3}
+  lips: {fileID: 21300000, guid: f6283937d73de924c84a5beac81a8984, type: 3}
+  glassws: {fileID: 0}
