@@ -9,6 +9,6 @@ public class Face : ScriptableObject
     public Sprite eye;
     public Sprite nose;
     public Sprite lips;
-    public Sprite glassec;
+    public Sprite glasses;
     public Sprite bread;
 }

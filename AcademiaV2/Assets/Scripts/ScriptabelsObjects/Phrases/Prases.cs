@@ -7,3 +7,4 @@ public class Prases : ScriptableObject
     public string phrase;
     public string company;
 }
+

@@ -23,7 +23,7 @@ public class GuessPhrase : MonoBehaviour
         ChangePhrase();
     }
 
-    private void Refresh()
+    private void Shuffle()
     {
         for (int i = 0; i < phrases.Length; i++)
         {
@@ -32,7 +32,7 @@ public class GuessPhrase : MonoBehaviour
         }
     }
 
-    private void ChangePhrase()
+    private void UpdatePhraseText()
     {
         phraseText.text = phrases[currentIndex].phrase;
     }
@@ -41,7 +41,7 @@ public class GuessPhrase : MonoBehaviour
     {
         string currentAnswer = input.text.Trim().ToLower();
         string currentCorrectAnswer = phrases[currentIndex].company.Trim().ToLower();
-        answerIsRight = currentAnswer == currentCorrectAnswer ? true : false;
+        answerIsRight = currentAnswer == currentCorrectAnswer;
 
         StartCoroutine(ChangeColor(answerIsRight));
 

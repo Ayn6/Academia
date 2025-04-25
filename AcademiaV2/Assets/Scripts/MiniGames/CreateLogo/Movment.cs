@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 public class Movment : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     private RectTransform rectTransform;
-    private Canvas canvas;
     private Vector3 offset;
     private Vector3 originalPosition;
 
@@ -18,21 +17,26 @@ public class Movment : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
-        canvas = GetComponentInParent<Canvas>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        // Берем точку под пальцем
         Vector3 pointerPosition = eventData.position;
+        // Выщитываем расстояние между пальцем и объектом
         offset = rectTransform.position - pointerPosition;
+        // Сохраняем начальную позицию объекта
         originalPosition = rectTransform.position;
 
+        // Устанавливаем объект в слой для перетаскивания
         transform.SetParent(dragLayer, false);
     }
 
     public void OnDrag(PointerEventData eventData) 
     {
+        // Берем точку под пальцем
         Vector3 pointerPosition = eventData.position;
+        // Перемещаем объект
         rectTransform.position = pointerPosition + offset;
     }
 
@@ -54,6 +58,10 @@ public class Movment : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
         OnBeginDrag(eventData);
     }
 
+    /// <summary>
+    /// Проверяем пересекаются ли два объекта
+    /// </summary>
+    /// <returns></returns>
     private bool IsOverLapping()
     {
         foreach (RectTransform t in objects) 
@@ -63,30 +71,11 @@ public class Movment : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
                 continue;
             }
 
-            if(RectOverLaps(rectTransform,  t))
+            if(rectTransform.Overlaps(t))
             {
                 return true;
             }
         }
         return false;
-    }
-
-    private bool RectOverLaps(RectTransform a, RectTransform b)
-    {
-        Rect recA = GetWorldRect(a);
-        Rect recB = GetWorldRect(b);
-
-        return recA.Overlaps(recB);
-    }
-
-    private Rect GetWorldRect(RectTransform rect)
-    {
-        Vector3[] corners = new Vector3[4];
-        rect.GetWorldCorners(corners);
-
-        Vector3 bottomLeft = corners[0];
-        Vector3 TopRight = corners[2];
-
-        return new Rect(bottomLeft, TopRight - bottomLeft);
     }
 }

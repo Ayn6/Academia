@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class CheckLogoAndCompany : MonoBehaviour
 {
-    public int selectedNameCompany;
-    public int selectedLogoCompany;
-
     private LogoCompanyView logoCompanyView;
     private LogoCompanyView nameCompanyView;
 
@@ -16,7 +13,8 @@ public class CheckLogoAndCompany : MonoBehaviour
 
     public void SelectName(LogoCompanyView nameCompany)
     {
-        selectedNameCompany = nameCompany.nameCompanyIndex;
+        if (nameCompanyView == null) { return; }
+
         nameCompanyView = nameCompany;
 
         nameCompany.ChangeOutline(Color.yellow, true);
@@ -24,12 +22,12 @@ public class CheckLogoAndCompany : MonoBehaviour
 
     public void SelectLogo(LogoCompanyView logoCompany)
     {
-        selectedLogoCompany = logoCompany.logoCompanyIndex;
+        if (nameCompanyView == null) { return; }
+
         logoCompanyView = logoCompany;
 
-        if (logoCompanyView == null) { return; }
 
-        if(selectedLogoCompany == selectedNameCompany)
+        if(logoCompanyView.index == selectedNameCompany)
         {
             nameCompanyView.ChangeOutline(Color.green, true);
             logoCompanyView.ChangeOutline(Color.green, true);

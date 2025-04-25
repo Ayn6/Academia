@@ -3,8 +3,7 @@ using UnityEngine.UI;
 
 public class LogoCompanyView : MonoBehaviour
 {
-    public int nameCompanyIndex;
-    public int logoCompanyIndex;
+    public int Index;
 
     [SerializeField] private Outline outline;
 

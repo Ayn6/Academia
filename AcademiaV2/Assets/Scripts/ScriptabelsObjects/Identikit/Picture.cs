@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Man", menuName = "Identikit/Man")]
-public class Picture : ScriptableObject
+public class PictureData : ScriptableObject
 {
     public Sprite man;
     public Sprite face;

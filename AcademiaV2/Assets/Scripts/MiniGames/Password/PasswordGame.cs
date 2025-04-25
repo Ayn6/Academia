@@ -19,7 +19,7 @@ public class PasswordGame : MonoBehaviour
 
     private void Start()
     {
-      StartCoroutine(ChangePassword());
+        StartCoroutine(ChangePassword());
     }
 
     public IEnumerator ChangePassword()
@@ -31,7 +31,7 @@ public class PasswordGame : MonoBehaviour
         int randPosX = Random.Range(minX, maxX);
         int randPosY = Random.Range(minY, maxY);
 
-        password.transform.position = new Vector2 (randPosX, randPosY);
+        password.transform.position = new Vector2(randPosX, randPosY);
 
         yield return new WaitForSeconds(2f);
 
@@ -40,23 +40,23 @@ public class PasswordGame : MonoBehaviour
 
     public void InputNumber(string number)
     {
-        if(input.text.Length < 6)
+        if (input.text.Length < 6)
         {
             input.text += number;
         }
     }
 
-    public void ClearInut()
+    public void ClearImput()
     {
         input.text = "";
     }
 
     public void SendPassword()
     {
-        if(input.text == currentPassword.ToString())
+        if (input.text == currentPassword.ToString())
         {
             StartCoroutine(ChangeColor(true));
-        } 
+        }
         else
         {
             StartCoroutine(ChangeColor(false));
@@ -67,7 +67,7 @@ public class PasswordGame : MonoBehaviour
 
     private IEnumerator ChangeColor(bool right)
     {
-        if(right)
+        if (right)
         {
             image.color = Color.green;
         }
@@ -77,7 +77,7 @@ public class PasswordGame : MonoBehaviour
         }
 
         yield return new WaitForSeconds(2f);
-        ClearInut();
+        ClearImput();
         image.color = Color.grey;
         setCountPassword++;
         if (setCountPassword == totalCountPassword)

@@ -9,10 +9,10 @@ public class ColorManeger : MonoBehaviour
 
     [SerializeField] private GameObject button;
 
-    public void GetColor(Image color)
+    public void GetColor(Image colorImage)
     {
-        currentColor = color.color;
-        indexColor = color.transform.GetSiblingIndex() + 1;
+        currentColor = colorImage.color;
+        indexColor = colorImage.transform.GetSiblingIndex() + 1;
     }
 
     public void SetColor(Image element)
